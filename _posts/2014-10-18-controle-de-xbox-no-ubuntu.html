@@ -1,0 +1,16 @@
+---
+layout: post
+title: Controle de xbox no Ubuntu
+date: '2014-10-18T18:13:00.000-03:00'
+author: Murilo Pontes
+tags:
+- xbox360
+- xboxdrv
+- xbox 360 controller
+- xpad
+modified_time: '2014-10-18T18:13:39.714-03:00'
+blogger_id: tag:blogger.com,1999:blog-3047384083282566923.post-3949589308763084972
+blogger_orig_url: http://dronespersonalizados.blogspot.com/2014/10/controle-de-xbox-no-ubuntu.html
+---
+
+<div dir="ltr" style="text-align: left;" trbidi="on"># não permitir que o joystick funcione como mouse<br />sudo aptitude remove xserver-xorg-input-joystick<br /><br /># não carregar driver xpad para o controle do xbox360<br />echo "blacklist xpad" &gt; &nbsp;/etc/modprobe.d/black-xpad.conf<br /><br /># instalar o driver em userspace para o controle do xbox360<br />sudo aptitude install xboxdrv<br /><br /><br /></div>

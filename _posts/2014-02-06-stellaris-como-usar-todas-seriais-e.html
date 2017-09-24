@@ -1,0 +1,18 @@
+---
+layout: post
+title: 'Tiva C series: resolver conflito da USART1 e USART4'
+date: '2014-02-06T11:49:00.000-03:00'
+author: Murilo Pontes
+tags:
+- Tiva C Series
+- Stellaris
+- Energia
+- USART4
+- USART1
+modified_time: '2015-01-18T13:09:27.856-03:00'
+thumbnail: http://1.bp.blogspot.com/-E_aEvL1_F8U/UvOfapkoKsI/AAAAAAAAoxE/9YPHbvkAAqM/s72-c/IMG_20140206_113318.jpg
+blogger_id: tag:blogger.com,1999:blog-3047384083282566923.post-5940612045031247034
+blogger_orig_url: http://dronespersonalizados.blogspot.com/2014/02/stellaris-como-usar-todas-seriais-e.html
+---
+
+Usando a Energia IDE (https://github.com/energia/Energia) é super simples.<br />O truque é remapear a USART1, para remover o conflito com os pinos da USART4.<br /><br /><a name='more'></a><br /><br />Sem remapear os pinos, uma tentativa de ativar a USART1 e USART4 com configuração padrão resulta em: USART4 (PC4 e PC5) &nbsp;ok e &nbsp;USART1 morta.<br />Para que isso não ocorra é só remapear os pinos da USART1 para PB0 e PB1.<br />O código para fazer isso está no snippet a seguir.<br /><br /><br /><script src="https://gist.github.com/murix/8845413.js"></script> <br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-E_aEvL1_F8U/UvOfapkoKsI/AAAAAAAAoxE/9YPHbvkAAqM/s1600/IMG_20140206_113318.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://1.bp.blogspot.com/-E_aEvL1_F8U/UvOfapkoKsI/AAAAAAAAoxE/9YPHbvkAAqM/s1600/IMG_20140206_113318.jpg" height="240" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Depois de compilado e instalado, <br />é só passar com o Buspirate no TX de cada uma das oito portas seriais para verificar a mensagem de teste.</td></tr></tbody></table><br />

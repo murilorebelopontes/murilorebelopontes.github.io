@@ -1,0 +1,14 @@
+---
+layout: post
+title: Force all network traffic pass through OpenVPN tunnel
+date: '2016-04-17T13:07:00.002-03:00'
+author: Murilo Pontes
+tags:
+- OpenVPN
+- iptables
+modified_time: '2016-04-17T13:07:52.337-03:00'
+blogger_id: tag:blogger.com,1999:blog-3047384083282566923.post-6741600946582778289
+blogger_orig_url: http://dronespersonalizados.blogspot.com/2016/04/force-all-network-traffic-pass-through.html
+---
+
+<br /># Flush all rules<br />iptables -F<br /><br /># Let's change the policy to DROP.<br />iptables -P INPUT DROP<br />iptables -P FORWARD DROP<br />iptables -P OUTPUT DROP<br /><br /># Allow basic INPUT traffic.<br />iptables -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT<br />iptables -A INPUT -i lo -j ACCEPT<br />iptables -A INPUT -p icmp --icmp-type 8 -m conntrack --ctstate NEW -j ACCEPT<br /><br /># Allow basic OUTPUT traffic.<br />iptables -A OUTPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT<br />iptables -A OUTPUT -o lo -j ACCEPT<br />iptables -A OUTPUT -p icmp -j ACCEPT<br /><br /># Allow traffic to the OpenVPN server, DNS and via the tunnel.<br />iptables -A OUTPUT -o tun+ -j ACCEPT<br />iptables -A OUTPUT -p udp -m udp -d 8.8.8.8 --dport 53 -j ACCEPT<br />iptables -A OUTPUT -p udp -m udp -d 8.8.4.4 --dport 53 -j ACCEPT<br />iptables -A OUTPUT -p udp -m udp -d vpn.server.example.com --dport 1194 -j ACCEPT<br /><br /># Reject everything else.<br />iptables -A INPUT -m conntrack --ctstate INVALID -j DROP<br />iptables -A INPUT -j REJECT --reject-with icmp-port-unreachable<br />iptables -A FORWARD -j REJECT --reject-with icmp-port-unreachable<br />iptables -A OUTPUT -j REJECT --reject-with icmp-port-unreachable<br /><br /><br />

@@ -1,0 +1,16 @@
+---
+layout: post
+title: Ubuntu kernel Rebuild
+date: '2016-03-23T15:10:00.001-03:00'
+author: Murilo Pontes
+tags:
+- Linux
+- Rebuild
+- Ubuntu
+- Kernel
+modified_time: '2016-03-27T13:22:00.245-03:00'
+blogger_id: tag:blogger.com,1999:blog-3047384083282566923.post-7342815133741402234
+blogger_orig_url: http://dronespersonalizados.blogspot.com/2016/03/ubuntu-kernel-rebuild.html
+---
+
+<div><br /></div><div># Get source</div><div>apt-get source linux-image-$(uname -r)</div><div><br /></div><div># Get tools</div><div>apt-get build-dep linux-image-$(uname -r)</div><div><br /></div><div># Copy current config</div><div>cp -v /boot/config-$(uname -r) &nbsp; .config</div><div><br /></div><div># Customize config</div><div>make menuconfig</div><div><br /></div><div># parallel build</div><div>make -j</div><div><br /></div><div># Install kernel modules first (~260MB with debug symbols stripped)</div>make INSTALL_MOD_STRIP=1 modules_install<br /><div><br /></div><div># Install kernel image (~6MB)<br /><div>make install</div><div><br /></div><div># Reboot</div><div><br /></div><div><br /></div><div><br /></div><div>References:</div><div>https://wiki.ubuntu.com/Kernel/BuildYourOwnKernel</div></div><div><br /></div><div><br /></div>

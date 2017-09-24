@@ -1,0 +1,19 @@
+---
+layout: post
+title: Testando ADC de 12-bits da Stellaris Launchpad
+date: '2013-11-02T21:21:00.001-03:00'
+author: Murilo Pontes
+tags:
+- ARM
+- potenciômetro
+- FreeRTOS
+- MCU
+- ADC
+- arduino
+modified_time: '2015-01-18T14:36:57.357-03:00'
+thumbnail: http://1.bp.blogspot.com/-JoDhUvGOMNI/UnWU6WtHKTI/AAAAAAAAm54/bOj-iaH9qZo/s72-c/IMG_20131102_210848.jpg
+blogger_id: tag:blogger.com,1999:blog-3047384083282566923.post-4883658756017445259
+blogger_orig_url: http://dronespersonalizados.blogspot.com/2013/11/testando-adc-de-12-bits-da-tiva-c-series.html
+---
+
+<div class="separator" style="clear: both; text-align: justify;">Depois de terminar o port da API do Arduino do GCC para o IAR e juntar com o FreeRTOS é hora de começar a fazer os testes de HW. Depois dos LEDs, botões e serial, chegou a vez de testar o ADC.</div><a name='more'></a> <br /><div class="separator" style="clear: both; text-align: center;">Até agora tudo funcionando perfeito.</div><div class="separator" style="clear: both; text-align: center;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-JoDhUvGOMNI/UnWU6WtHKTI/AAAAAAAAm54/bOj-iaH9qZo/s1600/IMG_20131102_210848.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://1.bp.blogspot.com/-JoDhUvGOMNI/UnWU6WtHKTI/AAAAAAAAm54/bOj-iaH9qZo/s320/IMG_20131102_210848.jpg" height="240" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Setup do&nbsp;&nbsp;potenciômetro na Stellaris Launchpad<br />o&nbsp;potenciômetro usado é o Phidgets Slider 60mm p/n 1112<br />[&nbsp;<a href="http://www.phidgets.com/products.php?product_id=1112">http://www.phidgets.com/products.php?product_id=1112</a>&nbsp;]</td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"><br /></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-JG-BjsWUvDI/UnWVANq5AHI/AAAAAAAAm6A/lNOTS8cKqro/s1600/tiva-c-series-adc.PNG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://3.bp.blogspot.com/-JG-BjsWUvDI/UnWVANq5AHI/AAAAAAAAm6A/lNOTS8cKqro/s320/tiva-c-series-adc.PNG" height="202" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Saída serial da Stellaris Launchpad<br />ADC no pino PB5 - valores entre 0 e 4095 (0-3.3v)<br />&nbsp;gerando o duty cycle do PWM para API do Arduino (analogWrite)</td></tr></tbody></table><br />

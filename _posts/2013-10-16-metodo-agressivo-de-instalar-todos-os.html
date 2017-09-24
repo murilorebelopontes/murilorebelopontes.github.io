@@ -1,0 +1,14 @@
+---
+layout: post
+title: Método agressivo de instalar todos os pacotes do archlinux em uma linha
+date: '2013-10-16T08:40:00.000-03:00'
+author: Murilo Pontes
+tags:
+- Instalar todos pacotes
+- ArchLinux
+modified_time: '2013-11-17T15:02:32.423-03:00'
+blogger_id: tag:blogger.com,1999:blog-3047384083282566923.post-1960358236451889529
+blogger_orig_url: http://dronespersonalizados.blogspot.com/2013/10/metodo-agressivo-de-instalar-todos-os.html
+---
+
+for x in $(pacman -Sg &amp;&amp; pacman -Ssq); do pacman --noconfirm --needed --force -S $x ; done

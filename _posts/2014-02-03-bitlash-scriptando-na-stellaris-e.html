@@ -1,0 +1,16 @@
+---
+layout: post
+title: 'Bitlash: scriptando na Stellaris e salvando na EEPROM'
+date: '2014-02-03T23:35:00.002-03:00'
+author: Murilo Pontes
+tags:
+- ARM
+- prompt de comando
+- Bitlash
+modified_time: '2015-01-18T13:11:13.318-03:00'
+thumbnail: http://1.bp.blogspot.com/-SQXyxx1MTcQ/UvBQLe7nOEI/AAAAAAAAotY/xxjLhdWZWo0/s72-c/bitlash-demo.JPG
+blogger_id: tag:blogger.com,1999:blog-3047384083282566923.post-8745154054037413442
+blogger_orig_url: http://dronespersonalizados.blogspot.com/2014/02/bitlash-scriptando-na-stellaris-e.html
+---
+
+O Bitlash é uma versão reduzida de um prompt de comandos e controle de tarefas para microcontroladores. Originalmente foi desenvolvido para Arduino / AVR, mas já conta com suporte para alguns kits ARM. <br /><a name='more'></a>Adicionei o suporte de EEPROM e Software reset para o kit Stellaris Launchpad rodar o bitlash com todos as features disponíveis.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-SQXyxx1MTcQ/UvBQLe7nOEI/AAAAAAAAotY/xxjLhdWZWo0/s1600/bitlash-demo.JPG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://1.bp.blogspot.com/-SQXyxx1MTcQ/UvBQLe7nOEI/AAAAAAAAotY/xxjLhdWZWo0/s1600/bitlash-demo.JPG" height="320" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Para instalar o bitlash, basta clonar o repositório dele, em uma pasta sem caracteres especiais dentro da pasta abaixo:<br />C:\energia-0101E0011\hardware\lm4f\libraries<br />Feito isso, é só procurar no menu de exemplos da Energia IDE os templates para o bitlash</td></tr></tbody></table><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-iu0egCcmHI0/UvBRHVit-7I/AAAAAAAAotg/hsozl1L0AW4/s1600/bitlash-eeprom-stellaris-startup.JPG" imageanchor="1" style="display: inline !important; margin-left: auto; margin-right: auto; text-align: center;"><img border="0" src="http://1.bp.blogspot.com/-iu0egCcmHI0/UvBRHVit-7I/AAAAAAAAotg/hsozl1L0AW4/s1600/bitlash-eeprom-stellaris-startup.JPG" height="390" width="400" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Dump da eeprom feito pelo comando "peep"<br />A função "startup" quando definida pelo usuário é chamada sempre a placa é reiniciada.</td></tr></tbody></table><br />* Página do projeto energia<br />http://www.energia.nu/

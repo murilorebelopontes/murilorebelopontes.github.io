@@ -1,0 +1,14 @@
+---
+layout: post
+title: Write new system image using bmaptool (beaglebone)
+date: '2016-04-05T11:57:00.001-03:00'
+author: Murilo Pontes
+tags:
+- beaglebone
+- bmap-tools
+modified_time: '2016-04-17T13:13:41.540-03:00'
+blogger_id: tag:blogger.com,1999:blog-3047384083282566923.post-5066441377598340882
+blogger_orig_url: http://dronespersonalizados.blogspot.com/2016/04/write-new-system-image-using-bmaptool.html
+---
+
+<br />#install <br />sudo apt-get -y install bmap-tools<br /><br /># download image and bmap file<br />wget <a href="https://debian.beagleboard.org/images/bone-debian-8.3-lxqt-4gb-armhf-2016-01-24-4gb.img.xz">https://debian.beagleboard.org/images/bone-debian-8.3-lxqt-4gb-armhf-2016-01-24-4gb.img.xz</a><br />wget&nbsp;<a href="https://debian.beagleboard.org/images/bone-debian-8.3-lxqt-4gb-armhf-2016-01-24-4gb.bmap">https://debian.beagleboard.org/images/bone-debian-8.3-lxqt-4gb-armhf-2016-01-24-4gb.bmap</a><br /><br />&nbsp;#write system image<br />bmaptool copy bone-debian-8.3-lxqt-4gb-armhf-2016-01-24-4gb.img.xz /dev/sdb<br /><br /><br />#results<br />bmaptool: info: discovered bmap file 'bone-debian-8.3-lxqt-4gb-armhf-2016-01-24-4gb.bmap'<br />bmaptool: info: block map format version 2.0<br />bmaptool: info: 870400 blocks of size 4096 (3.3 GiB), mapped 743361 blocks (2.8 GiB or 85.4%)<br />bmaptool: info: copying image 'bone-debian-8.3-lxqt-4gb-armhf-2016-01-24-4gb.img.xz' to block device '/dev/sdb' using bmap file 'bone-debian-8.3-lxqt-4gb-armhf-2016-01-24-4gb.bmap'<br />bmaptool: info: 1% copied

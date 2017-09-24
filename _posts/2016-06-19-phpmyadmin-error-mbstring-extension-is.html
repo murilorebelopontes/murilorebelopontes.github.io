@@ -1,0 +1,13 @@
+---
+layout: post
+title: phpMyAdmin - Error | The mbstring extension is missing. Ubuntu-16.04
+date: '2016-06-19T12:30:00.003-03:00'
+author: Murilo Pontes
+tags:
+- Ubuntu
+modified_time: '2016-07-31T14:06:48.805-03:00'
+blogger_id: tag:blogger.com,1999:blog-3047384083282566923.post-5644904489733815882
+blogger_orig_url: http://dronespersonalizados.blogspot.com/2016/06/phpmyadmin-error-mbstring-extension-is.html
+---
+
+Try using: <br /><pre>sudo apt-get install php-gettext<br />sudo phpenmod mcrypt <br />sudo phpenmod mbstring <br />sudo service apache2 restart<br /></pre>

@@ -1,0 +1,18 @@
+---
+layout: post
+title: ESP8266 ESP-01 relay control using Web server or MQTT / IOT
+date: '2015-04-26T10:05:00.000-03:00'
+author: Murilo Pontes
+tags:
+- MQTT
+- relay
+- IOT
+- ESP8266. ESP-01. Arduino. IDE
+- Web server
+modified_time: '2015-05-01T11:07:58.661-03:00'
+thumbnail: https://i.ytimg.com/vi/u3nateL1Ar8/default.jpg
+blogger_id: tag:blogger.com,1999:blog-3047384083282566923.post-3895456280336007168
+blogger_orig_url: http://dronespersonalizados.blogspot.com/2015/04/esp8266-esp-01-relay-control-using-web.html
+---
+
+Build with ESP8266 ESP-01 Arduino IDE (<a href="https://github.com/esp8266/Arduino">https://github.com/esp8266/Arduino</a>)<br /><br /># turn off relay<br />curl -X PUT http://eclipse.mqttbridge.com/murilo/esp/rele/off<br /><br /># turn on relay<br />curl -X PUT&nbsp;http://eclipse.mqttbridge.com/murilo/esp/rele/on<br /><br /># control relay from Android<br />https://play.google.com/store/apps/details?id=at.tripwire.mqtt.client&amp;hl=en<br />publish murilo/esp/rele/on &nbsp; - turn on relay<br />publish murilo/esp/rele/off &nbsp;- turn off relay<br /><div><br /></div><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/u3nateL1Ar8" width="420"></iframe> <br /><br />See source code...<br /><a name='more'></a><br /><script src="https://gist.github.com/murix/992fd558180e56173105.js"></script>   

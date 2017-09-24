@@ -1,0 +1,23 @@
+---
+layout: post
+title: Level shift 3,3V 5V bidirecional
+date: '2014-04-03T22:01:00.000-03:00'
+author: Murilo Pontes
+tags:
+- 2N4401
+- level shift
+- I2C
+- 2N2222
+- 3V3
+- BC546
+- BC337
+- 2N3904
+- 5V
+- PN100
+modified_time: '2015-01-18T10:57:49.700-03:00'
+thumbnail: http://2.bp.blogspot.com/-nqGCXxy6Xfg/Uz4CR-zGo5I/AAAAAAAAp20/VNCyvttLCZs/s72-c/i2c-level-shifter-transistors.png
+blogger_id: tag:blogger.com,1999:blog-3047384083282566923.post-6618298948194185497
+blogger_orig_url: http://dronespersonalizados.blogspot.com/2014/04/level-shift-arduino.html
+---
+
+Para misturar hardware de diferentes tensões é necessário utilizar circuitos de level shift.<br /><br /><a name='more'></a><br /><br />Na página do Arduino existe um esquema para ligar lógica de 3V3 em 5V.<br />http://www.hagtech.com/pdf/iic.pdf<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-nqGCXxy6Xfg/Uz4CR-zGo5I/AAAAAAAAp20/VNCyvttLCZs/s1600/i2c-level-shifter-transistors.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://2.bp.blogspot.com/-nqGCXxy6Xfg/Uz4CR-zGo5I/AAAAAAAAp20/VNCyvttLCZs/s1600/i2c-level-shifter-transistors.png" height="262" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Level shift de baixo custo e fácil de encontrar .</td></tr></tbody></table>Os resistores devem ser maiores que 4,7k para manter a conformidade com a especificação I2C.<br />Para outras aplicações os resistores mais externos (pull-ups do I2C) não são necessários.<br />Os transistores podem ser trocados por qualquer um desses:<br />2N2222<br />2N3904<br />PN100<br />2N4401<br />BC337<br />BC546<br />As tensões das lógicas também podem ser modificadas, não precisa ficar preso em 3V3 e 5V.

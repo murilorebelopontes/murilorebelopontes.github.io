@@ -1,0 +1,15 @@
+---
+layout: post
+title: pipe view - usando dd com barra de progresso
+date: '2015-04-19T15:00:00.002-03:00'
+author: Murilo Pontes
+tags:
+- pv
+- dd
+- pipe. view
+modified_time: '2015-04-19T18:12:55.717-03:00'
+blogger_id: tag:blogger.com,1999:blog-3047384083282566923.post-1642093272149924030
+blogger_orig_url: http://dronespersonalizados.blogspot.com/2015/04/pipe-view-usando-dd-com-barra-de.html
+---
+
+Para ver o progresso de ferramentas como `dd`, apresento o `pv`.<br />O pv (pipe view) mostra a quantidade e velocidade dos bytes que passam em um pipe.<br /><br />Muito simples de usar, basta passar o pv entre os pipes dos comandos.<br /><br />Exemplo com dd: <br />root@murix:~/Downloads# dd if=archlinux-2015.04.01-dual.iso | pv | dd of=/dev/sdd bs=4M<br /><br />&nbsp;37MB 0:00:08 [17.1MB/s] [ &nbsp; &nbsp; &nbsp; &nbsp; &lt;=&gt; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;]<br /><br /><br />

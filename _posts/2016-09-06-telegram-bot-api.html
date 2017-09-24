@@ -1,0 +1,13 @@
+---
+layout: post
+title: telegram bot api
+date: '2016-09-06T09:11:00.001-03:00'
+author: Murilo Pontes
+tags:
+- telegram
+modified_time: '2016-09-08T08:28:19.683-03:00'
+blogger_id: tag:blogger.com,1999:blog-3047384083282566923.post-832663715669888254
+blogger_orig_url: http://dronespersonalizados.blogspot.com/2016/09/telegram-bot-api.html
+---
+
+<pre><br />1) get an apikey from @botfather<br /><br />2) check bot<br />curl -i -X GET https://api.telegram.org/bot{apikey}/getMe<br /><br />3) get chatid <br />curl -i -X GET https://api.telegram.org/bot{apikey}/getUpdates<br /><br />4) be happy<br />curl -i -X GET https://api.telegram.org/bot{apikey}/sendMessage?chat_id={chatId}&text={someText}<br /></pre>

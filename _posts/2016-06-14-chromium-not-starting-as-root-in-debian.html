@@ -1,0 +1,13 @@
+---
+layout: post
+title: Chromium not starting as root in Debian
+date: '2016-06-14T10:17:00.000-03:00'
+author: Murilo Pontes
+tags:
+- Debian
+modified_time: '2016-07-31T14:06:59.375-03:00'
+blogger_id: tag:blogger.com,1999:blog-3047384083282566923.post-4055441557244788220
+blogger_orig_url: http://dronespersonalizados.blogspot.com/2016/06/chromium-not-starting-as-root-in-debian.html
+---
+
+Problem: <br /><pre>root@debian:~# chromium<br />[1:1:0614/091456:FATAL:sandbox_linux.cc(178)] Check failed: sandbox::Credentials::MoveToNewUserNS(). <br />#0 0x0000b0587b0d <unknown><br />#1 0x0000b05a01c0 <unknown><br />#2 0x0000b4c6cf33 <unknown><br />#3 0x0000b34d75dc <unknown><br /></unknown></unknown></unknown></unknown></pre>Solution: <br /><pre>root@debian:~# chromium --user-data-dir=/root/chromium --no-sandbox <br /></pre>

@@ -1,0 +1,16 @@
+---
+layout: post
+title: archlinux habilitar multilib e yaourt (acesso fácil ao AUR)
+date: '2014-03-15T12:18:00.001-03:00'
+author: Murilo Pontes
+tags:
+- yaourt
+- multilib
+- ArchLinux
+- pacman
+modified_time: '2015-01-18T11:42:25.317-03:00'
+blogger_id: tag:blogger.com,1999:blog-3047384083282566923.post-1365325225345540109
+blogger_orig_url: http://dronespersonalizados.blogspot.com/2014/03/archlinux-habilitar-multilib-e-yaourt.html
+---
+
+Abrir o arquivo /etc/pacman.conf<br />Descomentar essas linhas (remove o #)<br /><br /><a name='more'></a><br /><br />[multilib]<br />Include = /etc/pacman.d/mirrorlist<br /><div><br /></div><div>Adicionar esses linhas abaixo do trecho descomentado do multilib<br /><br /><br /></div><div><span style="background-color: #cfe2f3;">[archlinuxfr]</span><br /><span style="background-color: #cfe2f3;">SigLevel = Never</span><br /><span style="background-color: #cfe2f3;">Server = http://repo.archlinux.fr/$arch</span></div><div><br /></div><br />Atualizar a lista de pacotes<br /><div><br /></div><div>pacman -Sy</div><div><br /></div><div>Instalar o yaourt</div><div><br /></div><div>pacman -S yaourt</div><div><br /></div><div>Agora você tem acesso fácil a instalar pacotes do AUR com o yaourt do mesmo jeito que faz com o pacman.</div><div><br /><div><br /></div></div>

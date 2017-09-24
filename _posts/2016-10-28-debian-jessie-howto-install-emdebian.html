@@ -1,0 +1,18 @@
+---
+layout: post
+title: 'Debian Jessie howto install Emdebian CrossToolchains '
+date: '2016-10-28T10:11:00.002-03:00'
+author: Murilo Pontes
+tags:
+- Debian
+- howto
+- install
+- crosstoolchains
+- emdebian
+- jessie
+modified_time: '2016-10-28T10:11:29.227-03:00'
+blogger_id: tag:blogger.com,1999:blog-3047384083282566923.post-4947474804777942906
+blogger_orig_url: http://dronespersonalizados.blogspot.com/2016/10/debian-jessie-howto-install-emdebian.html
+---
+
+<pre><br />echo deb http://emdebian.org/tools/debian/ jessie main > /etc/apt/sources.list.d/crosstools.list<br />apt-get install -y curl<br />curl http://emdebian.org/tools/debian/emdebian-toolchain-archive.key | sudo apt-key add -<br />sudo dpkg --add-architecture arm64<br />sudo dpkg --add-architecture armel<br />sudo dpkg --add-architecture armhf<br />sudo dpkg --add-architecture mips<br />sudo dpkg --add-architecture mipsel<br />sudo dpkg --add-architecture powerpc<br />sudo dpkg --add-architecture ppc64el<br />sudo apt-get update<br />sudo apt-get install crossbuild-essential-arm64<br />sudo apt-get install crossbuild-essential-armel<br />sudo apt-get install crossbuild-essential-armhf<br />sudo apt-get install crossbuild-essential-mipsel<br />sudo apt-get install crossbuild-essential-ppc64el<br /></pre>  <pre><br /># I found problems with powerpc toolchain<br />sudo apt-get install crossbuild-essential-powerpc<br /><br /># libc6:powerpc is broken <br />Unpacking libc6:powerpc (2.19-18+deb8u6) ...<br />dpkg: error processing archive /var/cache/apt/archives/libc6_2.19-18+deb8u6_powerpc.deb (--unpack):<br /> trying to overwrite shared '/lib/ld.so.1', which is different from other instances of package libc6:powerpc<br /><br /># remove broken powerpc toolchain<br />sudo apt-get remove libatomic1:powerpc libc6-dev:powerpc libgcc1:powerpc libgomp1:powerpc libstdc++6:powerpc crossbuild-essential-powerpc libgcc-4.9-dev:powerpc libstdc++-4.9-dev:powerpc g++-4.9-powerpc-linux-gnu gcc-4.9-powerpc-linux-gnu g++-powerpc-linux-gnu gcc-powerpc-linux-gnu<br /></pre>

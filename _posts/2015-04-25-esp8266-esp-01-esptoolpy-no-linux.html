@@ -1,0 +1,17 @@
+---
+layout: post
+title: ESP8266 ESP-01 esptool.py no Linux
+date: '2015-04-25T19:21:00.001-03:00'
+author: Murilo Pontes
+tags:
+- esptool.py
+- ESP8266
+- nodemcu
+- Python
+- ESP-01
+modified_time: '2015-05-30T22:04:21.300-03:00'
+blogger_id: tag:blogger.com,1999:blog-3047384083282566923.post-2407209446790367745
+blogger_orig_url: http://dronespersonalizados.blogspot.com/2015/04/esp8266-esp-01-esptoolpy-no-linux.html
+---
+
+<br />A primeira ferramenta para o ESP-01 no Linux é o esptool.py. <br />No esptool dá para fazer a manutenção completa do ESP-01<br /><br />root@murix-System-Product-Name:~/Downloads# wget <a href="https://raw.githubusercontent.com/themadinventor/esptool/master/esptool.py">https://raw.githubusercontent.com/themadinventor/esptool/master/esptool.py</a><br />--2015-04-25 17:33:39--&nbsp; <a href="https://raw.githubusercontent.com/themadinventor/esptool/master/esptool.py">https://raw.githubusercontent.com/themadinventor/esptool/master/esptool.py</a><br />Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 199.27.75.133<br />Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|199.27.75.133|:443... connected.<br />HTTP request sent, awaiting response... 200 OK<br />Length: 23964 (23K) [text/plain]<br />Saving to: ‘esptool.py’<br /><br />100%[===============================================================================================================================&gt;] 23.964&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --.-K/s&nbsp;&nbsp; in 0,006s&nbsp; <br /><br />2015-04-25 17:33:40 (3,88 MB/s) - ‘esptool.py’ saved [23964/23964]<br /><br />root@murix-System-Product-Name:~/Downloads# chmod +x esptool.py <br /><br /><br /><br />root@murix-System-Product-Name:~/Downloads# ./esptool.py --port /dev/ttyUSB0 read_mac<br />Connecting...<br />MAC: 18:fe:34:9f:13:f3<br />root@murix-System-Product-Name:~/Downloads# <br /><br /><br /><a href="https://github.com/nodemcu/nodemcu-firmware/releases/tag/0.9.6-dev_20150406">https://github.com/nodemcu/nodemcu-firmware/releases/tag/0.9.6-dev_20150406</a><br /><br />root@murix-System-Product-Name:~/Downloads# ./esptool.py --port /dev/ttyUSB0 write_flash 0x0 nodemcu_integer_0.9.6-dev_20150406.bin <br />Connecting...<br />Erasing flash...<br />Writing at 0x00066400... (100 %)<br /><br />Leaving...<br />root@murix-System-Product-Name:~/Downloads# <br /><br />

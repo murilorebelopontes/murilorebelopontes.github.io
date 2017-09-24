@@ -1,0 +1,17 @@
+---
+layout: post
+title: Testando MPU6050 - Acelerômetro & Giroscópio
+date: '2013-11-03T12:38:00.002-03:00'
+author: Murilo Pontes
+tags:
+- Stellaris
+- FreeRTOS
+- Launchpad
+- Energia
+- MPU6050
+modified_time: '2015-01-18T14:36:05.459-03:00'
+blogger_id: tag:blogger.com,1999:blog-3047384083282566923.post-5339214833339376027
+blogger_orig_url: http://dronespersonalizados.blogspot.com/2013/11/testando-mpu6050-acelerometro-giroscopio.html
+---
+
+Testando o acelerômetro a intensidade dos leds variando em função da inclinação.<br />Implementada task do driver do MPU-6050 no FreeRTOS com API do Arduino/Energia<br /><br /><a name='more'></a><br /><br />led verde: posição estável.<br />led vermelho: inclinação no eixo x em relação a gravidade<br />led azul: inclinação no eixo y em relação a gravidade<br /><br />O MPU-6050 fornece:<br />- Acelerômetro: aceleração nos eixos x,y,z em m/s^2<br />- Giroscópio: velocidade angular nos eixos x,y,z em rad/s<br />- Temperatura: em graus&nbsp;<span style="background-color: white; color: #444444; font-family: arial, sans-serif; font-size: x-small; font-weight: bold; line-height: 16px;">Celsius.</span><br /><br /><iframe allowfullscreen="" frameborder="0" height="315" src="//www.youtube.com/embed/Qzp3Nm3zKIs" width="420"></iframe>

@@ -1,0 +1,14 @@
+---
+layout: post
+title: Configurando Arch Linux
+date: '2013-11-17T12:21:00.003-03:00'
+author: Murilo Pontes
+tags:
+- Arch Linux
+modified_time: '2015-01-18T14:23:31.046-03:00'
+thumbnail: http://4.bp.blogspot.com/-OU0yP_jw5ok/Ulu3Xf8lkhI/AAAAAAAAmjA/sh6H-9bIpoc/s72-c/snapshot1.png
+blogger_id: tag:blogger.com,1999:blog-3047384083282566923.post-3707253676232764605
+blogger_orig_url: http://dronespersonalizados.blogspot.com/2013/11/arch-linux.html
+---
+
+Configurando o ArchLinux para desktop<a name='more'></a><table cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody></tbody></table><br /><br /><a href="http://4.bp.blogspot.com/-OU0yP_jw5ok/Ulu3Xf8lkhI/AAAAAAAAmjA/sh6H-9bIpoc/s1600/snapshot1.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://4.bp.blogspot.com/-OU0yP_jw5ok/Ulu3Xf8lkhI/AAAAAAAAmjA/sh6H-9bIpoc/s400/snapshot1.png" height="250" width="400" /></a><br /><br /><br />Meu desktop atual no Archlinux<br /><br /><br /><pre></pre>Instalação do archlinux<br /><br />fdisk /dev/sda<br />o<br />n<br />p<br />enter<br />enter<br />mkfs.btrfs /dev/sda1<br />mount -o compress=lzo /dev/sda1 /mnt<br />pacstrap /mnt base base-devel grub ntfs-3g os-prober net-tools xfce4 xorg hdparm smartmontools reflector<br />genfstab /mnt &gt;&gt; /mnt/etc/fstab<br />arch-chroot /mnt<br />grub-mkconfig -o /boot/grub/grub.cfg<br />grub-install /dev/sda<br />ctrl+d<br />reboot<br />#gerar lista de mirrors otimizada<br /><pre><pre>#reflector -l 50 -f 50 --verbose -c Brazil --save /etc/pacman.d/mirrorlist</pre></pre>pacman -S net-tools &nbsp;kdebase xorg btrfs-progs<br />pacman -S xorg-xinit xterm lxdm mc networkmanager network-manager-applet<br />systemctl enable NetworkManager<br />systemctl enable lxdm<br />hdparm -tT /dev/sda<br />partx -a /dev/sda<br />reboot<br />pacman -S firefox flashplugin icedtea-web-java7<br />testar no firefox<br />http://www.bb.com.br<br />http://www.caixa.gov.br<br />pacman -S gedit base-devel gnome-disk-utility gkrellm chromium openssh<br />yaourt --noconfirm --needed --force -S aur/mkinitcpio-btrfs<br />#remove pacote mazelado<br />pacman -R openresolv<br />#configura idioma e teclado<br />localectl set-locale LANG=pt_BR.utf8<br />localectl set-keymap br-abnt<br />localectl set-x11-keymap br<br />#desligar/remove pacote fcitx ; senão o teclado fica sem inglês<br /><br />

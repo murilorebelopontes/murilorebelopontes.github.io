@@ -1,0 +1,13 @@
+---
+layout: post
+title: ArchLinux instalado os 32GB em 6724 pacotes
+date: '2014-10-17T21:13:00.000-03:00'
+author: Murilo Pontes
+tags:
+- ArchLinux
+modified_time: '2014-10-17T21:13:31.212-03:00'
+blogger_id: tag:blogger.com,1999:blog-3047384083282566923.post-5421181623551736611
+blogger_orig_url: http://dronespersonalizados.blogspot.com/2014/10/archlinux-instalado-os-32gb-em-6724.html
+---
+
+<div dir="ltr" style="text-align: left;" trbidi="on"><br /># Quantos pacotes tem?<br />pacman -Ssq | wc -l<br />6724<br /><br /># Vamos baixar tudo?<br />sudo pacman -S $(pacman -Ssq) --needed --force --nodeps -w<br /><div>Vamos ver, .... humm é só 32GB de download</div><div><br /></div><div># Vamos instalar tudo?</div><div>sudo pacman -S $(pacman -Ssq)</div><div><br /></div><div>E o mais incrível ainda não tem tudo que quero, mas já ajudou bastante.</div><div><br /></div><div></div></div>

@@ -1,0 +1,14 @@
+---
+layout: post
+title: Ubuntu 14.04 x64 / AMD64 install 32 bit support packages
+date: '2014-05-06T15:14:00.006-03:00'
+author: Murilo Pontes
+tags:
+- Linux
+- Ubuntu
+modified_time: '2015-01-18T10:47:31.828-03:00'
+blogger_id: tag:blogger.com,1999:blog-3047384083282566923.post-2992437336868663773
+blogger_orig_url: http://dronespersonalizados.blogspot.com/2014/05/ubuntu-1404-x64-amd64-install-32-bit.html
+---
+
+<br />aptitude -y install $(aptitude search lib32 | cut -f4 -d " ")<br /><br /><br />

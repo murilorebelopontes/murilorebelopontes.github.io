@@ -1,0 +1,16 @@
+---
+layout: post
+title: Ajuste do /etc/fstab para otimizar BTRFS com LZO e autodefrag
+date: '2013-10-18T11:08:00.000-03:00'
+author: Murilo Pontes
+tags:
+- autodefrag
+- BTRFS
+- LZO
+- ArchLinux
+modified_time: '2015-01-18T14:52:08.563-03:00'
+blogger_id: tag:blogger.com,1999:blog-3047384083282566923.post-2437555837998272167
+blogger_orig_url: http://dronespersonalizados.blogspot.com/2013/10/ajuste-do-etcfstab-para-otimizar-btrfs.html
+---
+
+Editar /etc/fstab assim:<br /><blockquote class="tr_bq">/dev/sdxx / btrfs rw,relatime,compress=lzo,space_cache,autodefrag 0 0</blockquote>Com compress=lzo a velocidade média fica cerca de 3x maior.<br /><br />Com autodefrag, toda vez que um pasta ou arquivo estiver causando muitos seeks e lerdeza o defrag é disparado.

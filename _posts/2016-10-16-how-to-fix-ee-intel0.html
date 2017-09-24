@@ -1,0 +1,17 @@
+---
+layout: post
+title: 'How to fix - (EE) intel(0): sna_mode_shutdown_crtc: invalid state found on
+  pipe 0, disabling CRTC:21'
+date: '2016-10-16T11:05:00.000-03:00'
+author: Murilo Pontes
+tags:
+- bugfix
+- UXA
+- intel
+- SNA
+modified_time: '2016-10-17T00:17:03.090-03:00'
+blogger_id: tag:blogger.com,1999:blog-3047384083282566923.post-6016039545809363156
+blogger_orig_url: http://dronespersonalizados.blogspot.com/2016/10/how-to-fix-ee-intel0.html
+---
+
+Screen sleep resulting in black screen of death (ubuntu 16.04 / intel i7 4790k / ga-z97x-ud3h-bk )<br />Possible fixes are:<br />1) restart X and loose current session<br />2) replace SNA with UXA and be happy foverer (best solution)<br /><br />How to detect bug:<br />cat /var/log/Xorg.0.log | grep sna_mode_shutdown_crtc<br />(EE) intel(0): sna_mode_shutdown_crtc: invalid state found on pipe 0, disabling CRTC:21<br /><br />How to fix:<br /><script src="https://gist.github.com/murix/09dde4f50f14670186a42cdeccd580a0.js"></script> Copy and save script above, and do:<br />sudo sh replace-sna-with-uxa.sh

@@ -1,0 +1,13 @@
+---
+layout: post
+title: how to use tplink wr1043 v1 qss button with openwrt 15.05
+date: '2017-06-16T16:43:00.000-03:00'
+author: Murilo Pontes
+tags:
+- Openwrt
+modified_time: '2017-06-16T17:44:09.144-03:00'
+blogger_id: tag:blogger.com,1999:blog-3047384083282566923.post-4966072999113275261
+blogger_orig_url: http://dronespersonalizados.blogspot.com/2017/06/how-to-use-tplink-wr1043-v1-qss-button.html
+---
+
+Create missing folder <br /><pre class="brush: js">mkdir -p /etc/hotplug.d/button<br /></pre>Create missing event debug handler /etc/hotplug.d/button/buttons <br /><pre class="brush: js">logger the button was $BUTTON and the action was $ACTION<br /></pre>Create missing button event handler /etc/hotplug.d/button/00-button <br /><pre class="brush: js">#!/bin/sh<br />. /lib/functions.sh<br />do_button () {<br />        local button<br />        local action<br />        local handler<br />        local min<br />        local max<br /><br />        config_get button $1 button<br />        config_get action $1 action<br />        config_get handler $1 handler<br />        config_get min $1 min<br />        config_get max $1 max<br /><br />        [ "$ACTION" = "$action" -a "$BUTTON" = "$button" -a -n "$handler" ] &amp;&amp; {<br />                [ -z "$min" -o -z "$max" ] &amp;&amp; eval $handler<br />                [ -n "$min" -a -n "$max" ] &amp;&amp; {<br />                        [ $min -le $SEEN -a $max -ge $SEEN ] &amp;&amp; eval $handler<br />                }<br />        }<br />}<br /><br />config_load system<br />config_foreach do_button button<br /></pre>Configure buttons, so append at the end of /etc/system/config  <br /><pre class="brush: js">config button<br />        option button 'wps'<br />        option action 'pressed'<br />        option handler 'echo 1 &gt; /sys/class/leds/tp-link\:green\:qss/brightness'<br /><br />config button<br />        option button 'wps'<br />        option action 'released'<br />        option handler 'echo 0 &gt; /sys/class/leds/tp-link\:green\:qss/brightness'<br /></pre>

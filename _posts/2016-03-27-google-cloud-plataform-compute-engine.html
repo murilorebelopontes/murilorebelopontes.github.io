@@ -1,0 +1,16 @@
+---
+layout: post
+title: Google Cloud Plataform - Compute engine - comand line examples
+date: '2016-03-27T16:26:00.001-03:00'
+author: Murilo Pontes
+tags:
+- Command Line
+- Compute Engine
+- Google Cloud Plataform
+- Gcloud
+modified_time: '2016-03-27T16:54:45.157-03:00'
+blogger_id: tag:blogger.com,1999:blog-3047384083282566923.post-4599511272571741953
+blogger_orig_url: http://dronespersonalizados.blogspot.com/2016/03/google-cloud-plataform-compute-engine.html
+---
+
+<br /><br />#list machine types<br />gcloud compute machine-types list<br /><br />#list created instances<br />gcloud compute instances list<br /><br />#create a redhat-6 instance with default machine type<br />gcloud compute instances create example-instance --image rhel-6 --zone us-central1-a<br /><br />#delete redhat-6 instance<br />gcloud compute instances delete example-instance --zone us-central1-a<br /><br />#create a ubuntu 15.10 instance with f1-micro machine type<br />gcloud compute instances create ubuntu1510-f1micro --image ubuntu-15-10 --zone us-central1-a --machine-type f1-micro<br /><br />#create a ubuntu 15.10 instance with f1-micro machine type with HTTP/HTTPS enabled<br />gcloud compute instances create ubuntu1510-f1micro --image ubuntu-15-10 --zone us-central1-a --machine-type f1-micro &nbsp;--tags http-server,https-server<br /><div><br /></div>#stop ubuntu 15.10 instance<br />gcloud compute instances stop ubuntu1510-f1micro &nbsp;--zone us-central1-a<br /><br />#start ubuntu 15.10 instance<br />gcloud compute instances start ubuntu1510-f1micro &nbsp;--zone us-central1-a<br /><br />#hardware reboot ubuntu 15.10 instance<br />gcloud compute instances reset ubuntu1510-f1micro &nbsp;--zone us-central1-a<br /><br /><br />#ubuntu 15.10 instance change machine type to n1-standard-1<br />gcloud compute instances set-machine-type ubuntu1510-f1micro --machine-type n1-standard-1 --zone us-central1-a<br /><br />#ubuntu 15.10 instance change machine type to g1-small<br />gcloud compute instances set-machine-type ubuntu1510-f1micro --machine-type g1-small &nbsp;--zone us-central1-a<br /><br />#ubuntu 15.10 instance change machine type to f1-micro<br />gcloud compute instances set-machine-type ubuntu1510-f1micro --machine-type f1-micro &nbsp;--zone us-central1-a<br /><br />#ubuntu 15.10 instance enable HTTP/HTTPS access<br />gcloud compute instances add-tags ubuntu1510-f1micro --zone us-central1-a --tags http-server,https-server<br /><div><br /></div><div><br /></div><div><br /></div><br /><br /><br /><br />
